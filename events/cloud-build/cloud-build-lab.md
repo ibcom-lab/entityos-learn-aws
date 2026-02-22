@@ -1,16 +1,33 @@
-lambda-local -l index.js -t 9000 -e events/lab/cloud-build/event-aws-lambda-function-create-cloud-build-storage-lab.json
-lambda-local -l index.js -t 9000 -e events/lab/cloud-build/event-aws-lambda-function-update-cloud-build-storage-lab.json
-- Code from the ibcom-lab/entityos-cloud-build repo
+0/ AURORA CREATE
 
-0/ DELETE DB IF IT EXISTS - LAB ONLY.
+- Use entityos-aws to create the:
+	- Aurora Cluster (u/p)
+	- Instance in the cluster (url)
+
+lambda-local -l index.js -t 9000 -e events/lab/event-aws-rds-subnet-groups-lab.json
+lambda-local -l index.js -t 9000 -e events/lab/event-aws-rds-subnet-group-create-lab.json
+
+lambda-local -l index.js -t 9000 -e events/lab/event-aws-rds-cluster-create-lab.json
+lambda-local -l index.js -t 9000 -e events/lab/event-aws-rds-clusters-lab.json
+
+
+1/ CREATE FUNCTION TO ACCESS AURORA ON AWS
+
+- Need to run the commands in the VPC on on AWS to access the Aurora database etc
+- Proxy lambda Code in /functions/cloud-build folder.
+
+lambda-local -l index.js -t 9000 -e events/cloud-build/event-aws-lambda-function-create-cloud-build-storage-lab.json
+lambda-local -l index.js -t 9000 -e events/cloud-build/event-aws-lambda-function-update-cloud-build-storage-lab.json
+
+2/ DELETE DB IF IT EXISTS - LAB ONLY.
 
 !!! lambda-local -l index.js -t 9000 -e events/lab/cloud-build/event-aws-lambda-function-invoke-cloud-build-storage-data-execute-drop-data-base-lab.json
 
-1/ CREATE DB
+3/ CREATE DB
 
 lambda-local -l index.js -t 9000 -e events/lab/cloud-build/event-aws-lambda-function-invoke-cloud-build-storage-data-base-create-lab.json
 
-2/ CREATE MODEL
+4/ CREATE MODEL
 
 *Do 500 at a time*
 
@@ -19,7 +36,7 @@ lambda-local -l index.js -t 9000 -e events/lab/cloud-build/event-aws-lambda-func
 
 lambda-local -l index.js -t 9000 -e events/lab/cloud-build/event-aws-lambda-function-invoke-cloud-build-storage-data-model-information-lab.json
 
-3/ INITIALISE DB / GENESIS & SYSTEM DATA
+5/ INITIALISE DB / GENESIS & SYSTEM DATA
 
 lambda-local -l index.js -t 9000 -e events/lab/cloud-build/event-aws-lambda-function-invoke-cloud-build-storage-data-model-initialise-genesis-lab.json
 	- lambda-local -l index.js -t 9000 -e events/lab/cloud-build/event-aws-lambda-function-invoke-cloud-build-storage-data-model-initialise-genesis-check-lab.json
@@ -28,18 +45,9 @@ lambda-local -l index.js -t 9000 -e events/lab/cloud-build/event-aws-lambda-func
 *Do 100 at a time*
 lambda-local -l index.js -t 9000 -e events/lab/cloud-build/event-aws-lambda-function-invoke-cloud-build-storage-data-model-initialise-system-lab.json
 
-4/ DB QUERY / EXECUTE
+6/ DB QUERY / EXECUTE
 
 lambda-local -l index.js -t 9000 -e events/lab/cloud-build/event-aws-lambda-function-invoke-cloud-build-storage-data-query-lab.json
 lambda-local -l index.js -t 9000 -e events/lab/cloud-build/event-aws-lambda-function-invoke-cloud-build-storage-data-execute-drop-lab.json
 
-
-
-----
-
-lab-rds-cluster-001-aurora-serverless-v2.cluster-???.ap-southeast-2.rds.amazonaws.com
-lab-rds-cluster-001-aurora-serverless-v2.cluster-???.ap-southeast-2.rds.amazonaws.com
-
-Todo:
-when creating creating the cluster add 3306 rule to self SG
-create function set longer timeout
+---
