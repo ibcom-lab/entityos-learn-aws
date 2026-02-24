@@ -1,5 +1,6 @@
 ### 1/ AWS IAM ACCESS POLICY TEMPLATE
 
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -215,6 +216,7 @@
     }
   ]
 }
+```
 
 ### 2/ AURORA CREATE
 
