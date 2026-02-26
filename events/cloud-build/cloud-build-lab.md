@@ -2,8 +2,19 @@
 
 ```json
 {
-  "Version": "2012-10-17",
-  "Statement": [
+	"Version": "2012-10-17",
+	"Statement": [
+	{
+		"Sid": "EC2AMISharingFull",
+		"Effect": "Allow",
+		"Action": [
+			"ec2:ModifyImageAttribute",
+			"ec2:ModifySnapshotAttribute",
+			"ec2:DescribeImageAttribute",
+			"ec2:DescribeImages"
+		],
+		"Resource": "*"
+	},
     {
       "Sid": "EC2ReadOnly",
       "Effect": "Allow",
