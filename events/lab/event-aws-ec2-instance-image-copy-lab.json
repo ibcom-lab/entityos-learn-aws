@@ -1,0 +1,14 @@
+{
+  "context": "cloud-build",
+  "method": "aws-ec2-instance-image-copy",
+  "source":
+  {
+    "imageId": "ami-08b71e247b14429cc",
+    "region": "ap-southeast-2"
+  },
+  "image":
+  {
+    "name": "lab-image-001"
+  },
+  "encrypted": true
+}

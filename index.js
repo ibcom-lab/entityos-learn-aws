@@ -37,6 +37,10 @@
 	lambda-local -l index.js -t 9000 -e events/lab/event-aws-ec2-instance-image-delete-oldest-lab.json
 	lambda-local -l index.js -t 9000 -e events/lab/event-aws-ec2-instance-image-snapshots-orphaned-delete-oldest-lab.json
 
+	lambda-local -l index.js -t 9000 -e events/lab/event-aws-ec2-instance-image-share-lab.json
+	lambda-local -l index.js -t 9000 -e events/lab/event-aws-ec2-instance-image-unshare-lab.json
+	lambda-local -l index.js -t 9000 -e events/lab/event-aws-ec2-instance-image-copy-lab.json
+
 	lambda-local -l index.js -t 9000 -e events/lab/event-aws-ec2-snapshots-lab.json
 	lambda-local -l index.js -t 9000 -e events/lab/event-aws-ec2-snapshot-export-lab.json
 
@@ -749,7 +753,10 @@ exports.handler = function (event, context, callback)
 						'aws-iam-role-create',
 						'aws-lambda-function-create',
 						'aws-lambda-function-update',
-						'aws-lambda-function-invoke'
+						'aws-lambda-function-invoke',
+						'aws-ec2-instance-image-share',
+						'aws-ec2-instance-image-copy',
+						'aws-ec2-instance-image-unshare'
 					],
 						method))
 					{

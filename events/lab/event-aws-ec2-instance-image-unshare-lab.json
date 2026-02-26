@@ -1,0 +1,10 @@
+{
+	"context": "lab",
+	"method": "aws-ec2-instance-image-share",
+	"image": {
+		"id": "ami-08b71e247b14429cc"
+	},
+	"target": {
+		"accountIds": ["590184124704"]
+	}
+}
