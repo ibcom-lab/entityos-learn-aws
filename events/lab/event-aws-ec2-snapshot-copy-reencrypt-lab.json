@@ -1,0 +1,8 @@
+{
+    "method": "aws-ec2-snapshot-copy-reencrypt",
+    "context": "lab",
+    "snapshotId": "snap-???",
+    "region": "ap-southeast-2",
+    "kmsKeyId": "arn:aws:kms:ap-southeast-2:???:key/???",
+    "description": "???-compute-snapshot-reencrypted-001"
+}

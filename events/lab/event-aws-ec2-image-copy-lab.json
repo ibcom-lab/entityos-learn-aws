@@ -1,0 +1,11 @@
+{
+    "method": "aws-ec2-image-copy",
+    "context": "lab",
+    "copy":
+    {
+        "sourceImageId": "ami-???",
+        "sourceRegion": "ap-southeast-2",
+        "name": "???",
+        "kmsKeyId": "arn:aws:kms:ap-southeast-2:???:key/???"
+    }
+}

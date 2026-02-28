@@ -758,14 +758,27 @@ exports.handler = function (event, context, callback)
 						'aws-ec2-instance-image-share',
 						'aws-ec2-instance-image-share-full',
 						'aws-ec2-instance-image-copy',
-						'aws-ec2-instance-image-unshare'
+						'aws-ec2-instance-image-unshare',
+						'aws-ec2-snapshot-copy-unencrypted',
+						'aws-ec2-snapshot-describe',
+						'aws-ec2-image-register',
+						'aws-ec2-image-share',
+						'aws-ec2-image-copy',
+						'aws-ec2-image-describe',
+						'aws-ec2-snapshot-copy-reencrypt',
+						'aws-sts-get-caller-identity',
+						'aws-kms-key-policy-update'
 					],
 						method))
 					{
 						if (_.includes(method, 'aws'))
 						{
-							const infrastructurefactoryAWS= require('infrastructurefactory/infrastructurefactory-aws.js');
+							const infrastructurefactoryAWS = require('infrastructurefactory/infrastructurefactory-aws.js');
 							infrastructurefactoryAWS.init();
+
+							const infrastructurefactoryAWSSharing = require('infrastructurefactory/infrastructurefactory-aws-sharing.js');
+							infrastructurefactoryAWSSharing.init();
+
 						}
 
 						entityos.invoke('app-process-' + method)

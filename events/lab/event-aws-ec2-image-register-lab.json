@@ -1,0 +1,12 @@
+{
+    "method": "aws-ec2-image-register",
+    "context": "lab",
+    "register":
+    {
+        "snapshotId": "snap-???",
+        "name": "lab-compute-image-reencrypted-001",
+        "volumeSize": 100,
+        "architecture": "x86_64",
+        "rootDeviceName": "/dev/sda1"
+    }
+}

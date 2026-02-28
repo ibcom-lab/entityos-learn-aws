@@ -1,0 +1,10 @@
+{
+    "method": "aws-ec2-image-share",
+    "context": "lab",
+    "share":
+    {
+        "imageId": "ami-???",
+        "snapshotId": "snap-???",
+        "targetAccountId": "???"
+    }
+}

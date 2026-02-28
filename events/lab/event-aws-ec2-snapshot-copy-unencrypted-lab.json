@@ -1,0 +1,7 @@
+{
+    "method": "aws-ec2-snapshot-copy-unencrypted",
+    "context": "lab",
+    "snapshotId": "snap-???",
+    "region": "ap-southeast-2",
+    "description": "lab-snapshot-unencrypted-001"
+}

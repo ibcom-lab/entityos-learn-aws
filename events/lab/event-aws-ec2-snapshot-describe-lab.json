@@ -1,0 +1,5 @@
+{
+    "method": "aws-ec2-snapshot-describe",
+    "context": "lab",
+    "snapshotIds": "snap-03ba2077c4b68a697"
+}

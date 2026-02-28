@@ -1,0 +1,5 @@
+{
+    "method": "aws-ec2-image-describe",
+    "context": "lab",
+    "imageIds": "ami-???"
+}

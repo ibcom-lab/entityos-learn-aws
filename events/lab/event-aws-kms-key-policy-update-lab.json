@@ -1,0 +1,7 @@
+{
+    "method": "aws-kms-key-policy-update",
+    "context": "lab",
+    "keyId": "arn:aws:kms:ap-southeast-2:???:key/???",
+    "sourceAccountId": "???",
+    "targetAccountId": "???"
+}
